@@ -1,0 +1,151 @@
+@import 'palette.less';
+@import 'mixins.less';
+
+/* MOBILE STYLESHEET */
+
+body {
+    font-family: "Roboto", "Helvetica", sans-serif;
+}
+
+header {
+    background-color: @darkColor;
+    h1 {
+        .headingFontAttributes(@lightColor;
+        3em);
+    }
+    span {
+        .headingFontAttributes(@color1;
+        1.1em);
+        margin-left: -.3em;
+        margin-right: -.3em;
+    }
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: @darkColor;
+    }
+    li {
+        float: none;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        border: solid thin darken(@color1, 33%);
+        text-transform: uppercase;
+    }
+    li a {
+        display: block;
+        color: @lightColor;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        &:hover {
+            background-color: darken(@color1, 33%);
+        }
+        &:active {
+            background-color: @lightColor;
+            color: @darkColor;
+        }
+    }
+}
+
+main {
+    padding: 1.5em;
+    line-height: 1.5em;
+    h2 {
+        .headingFontAttributes(@darkColor, 1.5em);
+        text-align: left;
+        padding-left: 0%
+    }
+    em {
+        font-weight: bold;
+        font-style: italic;
+    }
+    p {
+        margin-top: 1%;
+    }
+    
+    a {
+        color: @color1;
+        text-decoration: none;
+    }
+   
+}
+
+.protectedAreas li {
+    margin: auto;
+    padding: 1%;
+    padding-left: 1.2%;
+    margin-top: .2em;
+    list-style: circle;
+    list-style-position:inside;
+   
+}
+
+footer {
+    background-color: @darkColor;
+    color: @color1;
+    padding: 5%;
+    margin: 0%;
+    li a {
+        color: @color1;
+        &:hover {
+            color: @lightColor;
+        }
+        &:active {
+            color: @color3;
+        }
+    }
+}
+
+.section {
+    display: inline;
+   
+    img {
+        .boxProperty(5px;
+        2px 2px 2px @darkColor);
+    
+    }
+}
+
+
+/*
+
+TABLET STYLESHEET
+
+The following CSS affects all screen sizes larger than 480 pixels wide.
+
+*/
+
+@media only screen and (min-width: 481px) {
+    
+    body{
+        font-size:125%;
+    }
+    main {
+        padding: 3%;
+    }
+    
+ }
+
+
+/*
+
+DESKTOP STYLESHEET
+
+The following CSS affects all screen sizes larger than 1024 pixels wide.
+
+*/
+
+@media only screen and (min-width: 1025px) {
+    
+    a {
+        &:hover {
+            font-weight: bold;
+        }
+}
+}
