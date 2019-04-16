@@ -17,7 +17,7 @@ Author: kahela fickle
 
     <title>Final Project: The Red Panda</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138004808-1"></script>
@@ -39,6 +39,27 @@ Author: kahela fickle
     <link href="css/grid.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
 
+    <style>
+        button {
+            background-color: darkgoldenrod;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        /* Selects any <a> that is being activated */
+
+        button:active {
+            background: red;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -58,6 +79,8 @@ Author: kahela fickle
     </nav>
 
     <main>
+
+        <button id="test"> Track</button>
 
         <img src="images/redPanda1.jpg" alt="Image of a red panda in the snow." title="Image of a red panda in the snow.">
 
@@ -83,6 +106,25 @@ Author: kahela fickle
         </ul>
 
     </footer>
+
+    <!-- JQuery Scripts that add Google event tracking capabilities -->
+
+    <script>
+        $("#test").on(
+
+            'click', // when the btn is clicked
+            function() { // execute 
+                gtag('event', 'click', {
+                    'event_category': 'interaction',
+                    'event_label': 'btnClick',
+                    'value': 'button has been clicked'
+                });
+
+            }
+
+        );
+
+    </script>
 
 </body>
 
